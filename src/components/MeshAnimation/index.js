@@ -126,7 +126,7 @@ export default function MeshAnimation() {
             y1={nodes[a].cy}
             x2={nodes[b].cx}
             y2={nodes[b].cy}
-            stroke="#67ea94"
+            stroke="#2D7D9A"
             strokeWidth="1"
             opacity="0.25"
           />
@@ -139,7 +139,7 @@ export default function MeshAnimation() {
             cx={n.cx}
             cy={n.cy}
             r="5"
-            fill="#67ea94"
+            fill="#2D7D9A"
             opacity="0.6"
             filter="url(#nodeGlow)"
           />
@@ -148,7 +148,7 @@ export default function MeshAnimation() {
         {/* Packet 1: coral, left-to-right */}
         <g filter="url(#packetGlow)">
           {/* Pulsing glow ring */}
-          <circle r="12" fill="none" stroke="#e07050" strokeWidth="2" opacity="0.5">
+          <circle r="12" fill="none" stroke="#B87333" strokeWidth="2" opacity="0.5">
             <animateMotion
               dur="10s"
               repeatCount="indefinite"
@@ -172,7 +172,7 @@ export default function MeshAnimation() {
             />
           </circle>
           {/* Solid packet dot */}
-          <circle r="5" fill="#e07050">
+          <circle r="5" fill="#B87333">
             <animateMotion
               dur="10s"
               repeatCount="indefinite"
@@ -188,7 +188,7 @@ export default function MeshAnimation() {
         {/* Packet 2: mint, right-to-left, offset start */}
         <g filter="url(#packetGlow)">
           {/* Pulsing glow ring */}
-          <circle r="12" fill="none" stroke="#67ea94" strokeWidth="2" opacity="0.5">
+          <circle r="12" fill="none" stroke="#6BB5D1" strokeWidth="2" opacity="0.5">
             <animateMotion
               dur="8s"
               repeatCount="indefinite"
@@ -213,7 +213,7 @@ export default function MeshAnimation() {
             />
           </circle>
           {/* Solid packet dot */}
-          <circle r="5" fill="#67ea94">
+          <circle r="5" fill="#2D7D9A">
             <animateMotion
               dur="8s"
               repeatCount="indefinite"

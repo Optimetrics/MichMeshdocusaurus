@@ -1,42 +1,51 @@
 /**
- * Custom CSS for MichMesh - themed to match the trifold handout.
- * Colors: dark olive green headings, coral/salmon accents, mint green highlights.
+ * Custom CSS for MichMesh — Lake & Copper color scheme.
+ * Lake (primary): #2D7D9A  |  Copper (accent): #B87333
  */
 
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
 :root {
-  --ifm-color-primary: #3d6b45;
-  --ifm-color-primary-dark: #366040;
-  --ifm-color-primary-darker: #335a3c;
-  --ifm-color-primary-darkest: #2a4a32;
-  --ifm-color-primary-light: #44764a;
-  --ifm-color-primary-lighter: #477c4e;
-  --ifm-color-primary-lightest: #528d58;
+  --ifm-color-primary: #2D7D9A;
+  --ifm-color-primary-dark: #287089;
+  --ifm-color-primary-darker: #236A85;
+  --ifm-color-primary-darkest: #1A4F63;
+  --ifm-color-primary-light: #3A8DAD;
+  --ifm-color-primary-lighter: #4A9DBE;
+  --ifm-color-primary-lightest: #6BB5D1;
+
+  --ifm-background-color: #F5F1EB;
+  --ifm-font-family-base: Inter, system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
   --ifm-code-font-size: 95%;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
 
-  /* Trifold accent colors */
-  --michmesh-coral: #e07050;
-  --michmesh-coral-light: #f0907a;
-  --michmesh-mint: #67ea94;
-  --michmesh-dark-green: #2d4a32;
-  --michmesh-light-gray: #f5f5f5;
-  --michmesh-medium-gray: #e8e8e8;
+  /* MichMesh palette */
+  --michmesh-lake: #2D7D9A;
+  --michmesh-lake-dark: #1F5F78;
+  --michmesh-copper: #B87333;
+  --michmesh-copper-light: #CA9060;
+  --michmesh-accent: #6BB5D1;
+  --michmesh-bg-light: #F5F1EB;
+  --michmesh-bg-medium: #E8E4DD;
 }
 
 [data-theme='dark'] {
-  --ifm-color-primary: #5cb86a;
-  --ifm-color-primary-dark: #4aaf59;
-  --ifm-color-primary-darker: #44a553;
-  --ifm-color-primary-darkest: #388844;
-  --ifm-color-primary-light: #6ec17b;
-  --ifm-color-primary-lighter: #74c481;
-  --ifm-color-primary-lightest: #8fd098;
+  --ifm-color-primary: #4A9DBE;
+  --ifm-color-primary-dark: #3A8DAD;
+  --ifm-color-primary-darker: #2D7D9A;
+  --ifm-color-primary-darkest: #1F5F78;
+  --ifm-color-primary-light: #6BB5D1;
+  --ifm-color-primary-lighter: #7EC2DA;
+  --ifm-color-primary-lightest: #A3D4E8;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
 
-  --michmesh-coral: #e8836b;
-  --michmesh-coral-light: #f0a090;
-  --michmesh-mint: #67ea94;
-  --michmesh-dark-green: #1a2e1e;
-  --michmesh-light-gray: #1e1e1e;
-  --michmesh-medium-gray: #2a2a2a;
+  --ifm-background-color: #1A1A1A;
+
+  --michmesh-lake: #4A9DBE;
+  --michmesh-lake-dark: #2D7D9A;
+  --michmesh-copper: #CA9060;
+  --michmesh-copper-light: #DBA878;
+  --michmesh-accent: #7EC2DA;
+  --michmesh-bg-light: #1A1A1A;
+  --michmesh-bg-medium: #2A2A2A;
 }

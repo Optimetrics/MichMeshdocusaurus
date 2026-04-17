@@ -1,11 +1,10 @@
 /**
- * Homepage styles - themed to match the Michigan Mesh trifold handout.
- * Color palette: dark olive green, coral/salmon accents, mint green highlights.
+ * Homepage styles — Lake & Copper color scheme.
  */
 
 /* ===== HERO BANNER ===== */
 .heroBanner {
-  background: linear-gradient(135deg, var(--michmesh-dark-green) 0%, #3d6b45 60%, var(--michmesh-coral) 100%);
+  background: linear-gradient(135deg, var(--michmesh-lake-dark) 0%, var(--michmesh-lake) 60%, var(--michmesh-copper) 100%);
   position: relative;
   overflow: hidden;
 }
@@ -17,7 +16,7 @@
   right: -60px;
   width: 300px;
   height: 300px;
-  background: var(--michmesh-coral);
+  background: var(--michmesh-copper);
   border-radius: 50%;
   opacity: 0.3;
 }
@@ -29,7 +28,7 @@
   left: -40px;
   width: 200px;
   height: 200px;
-  background: var(--michmesh-mint);
+  background: var(--michmesh-accent);
   border-radius: 50%;
   opacity: 0.15;
 }
@@ -48,7 +47,7 @@
 
 .heroMeshtasticBadge {
   display: inline-block;
-  background: var(--michmesh-mint);
+  background: var(--michmesh-accent);
   color: #1a1a1a;
   font-weight: 800;
   font-size: 0.9rem;
@@ -75,7 +74,7 @@
 }
 
 .heroSubtag {
-  color: var(--michmesh-coral-light);
+  color: var(--michmesh-copper-light);
   font-size: 1.1rem;
   font-weight: 500;
   letter-spacing: 0.05em;
@@ -91,15 +90,15 @@
 }
 
 .btnPrimary {
-  background: var(--michmesh-mint) !important;
+  background: var(--michmesh-accent) !important;
   color: #1a1a1a !important;
   border: none !important;
   font-weight: 700;
 }
 
 .btnPrimary:hover {
-  background: #4ddf7a !important;
-  color: #1a1a1a !important;
+  background: var(--michmesh-copper) !important;
+  color: #ffffff !important;
 }
 
 .btnSecondary {
@@ -128,19 +127,19 @@
 
 /* ===== SECTION TITLES ===== */
 .sectionTitle {
-  color: var(--michmesh-dark-green);
+  color: var(--michmesh-lake);
   font-weight: 800;
   margin-bottom: 1rem;
 }
 
 [data-theme='dark'] .sectionTitle {
-  color: var(--michmesh-mint);
+  color: var(--michmesh-accent);
 }
 
 /* ===== FREE OFF-GRID COMMUNICATION ===== */
 .freeOffGrid {
   padding: 4rem 0;
-  background: var(--michmesh-light-gray);
+  background: var(--michmesh-bg-light);
 }
 
 .freeOffGrid .sectionTitle {
@@ -164,13 +163,13 @@
   padding: 1rem 1.2rem;
   background: #ffffff;
   border-radius: 8px;
-  border-left: 4px solid var(--michmesh-dark-green);
+  border-left: 4px solid var(--michmesh-lake);
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
 }
 
 [data-theme='dark'] .featureItem {
-  background: var(--michmesh-medium-gray);
-  border-left-color: var(--michmesh-mint);
+  background: var(--michmesh-bg-medium);
+  border-left-color: var(--michmesh-accent);
 }
 
 .featureIcon {
@@ -203,13 +202,13 @@
 
 .leadText {
   font-size: 1.2rem;
-  color: var(--michmesh-dark-green);
+  color: var(--michmesh-lake);
   margin-bottom: 1.5rem;
   line-height: 1.6;
 }
 
 [data-theme='dark'] .leadText {
-  color: var(--michmesh-mint);
+  color: var(--michmesh-accent);
 }
 
 .whoWeAreContent > p:last-child {
@@ -220,7 +219,7 @@
 /* ===== COMMUNITY BENEFITS ===== */
 .communityBenefits {
   padding: 4rem 0;
-  background: var(--michmesh-light-gray);
+  background: var(--michmesh-bg-light);
 }
 
 .communityBenefits .sectionTitle {
@@ -250,11 +249,11 @@
   padding: 2rem 1.5rem;
   text-align: center;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-  border-top: 4px solid var(--michmesh-coral);
+  border-top: 4px solid var(--michmesh-copper);
 }
 
 [data-theme='dark'] .benefitCard {
-  background: var(--michmesh-medium-gray);
+  background: var(--michmesh-bg-medium);
 }
 
 .benefitIcon {
@@ -263,13 +262,13 @@
 }
 
 .benefitTitle {
-  color: var(--michmesh-dark-green);
+  color: var(--michmesh-lake);
   font-size: 1.2rem;
   margin-bottom: 0.5rem;
 }
 
 [data-theme='dark'] .benefitTitle {
-  color: var(--michmesh-mint);
+  color: var(--michmesh-accent);
 }
 
 .benefitCard p {
@@ -279,7 +278,7 @@
 
 .noFeesBanner {
   text-align: center;
-  background: var(--michmesh-dark-green);
+  background: var(--michmesh-lake);
   color: #ffffff;
   padding: 1.5rem 2rem;
   border-radius: 8px;
@@ -320,7 +319,7 @@
 .hostSubtitle {
   font-size: 1.15rem;
   font-weight: 700;
-  color: var(--michmesh-coral);
+  color: var(--michmesh-copper);
   margin-bottom: 0.75rem;
 }
 
@@ -346,7 +345,7 @@
 /* ===== FUN & FREE ===== */
 .funAndFree {
   padding: 4rem 0;
-  background: linear-gradient(135deg, var(--michmesh-dark-green) 0%, #3d6b45 100%);
+  background: linear-gradient(135deg, var(--michmesh-lake-dark) 0%, var(--michmesh-lake) 100%);
   color: #ffffff;
 }
 
@@ -368,13 +367,13 @@
 }
 
 .funText strong {
-  color: var(--michmesh-mint);
+  color: var(--michmesh-accent);
 }
 
 /* ===== RESOURCES ===== */
 .resources {
   padding: 4rem 0;
-  background: var(--michmesh-light-gray);
+  background: var(--michmesh-bg-light);
 }
 
 .resources .sectionTitle {
@@ -410,7 +409,7 @@
 }
 
 [data-theme='dark'] .resourceCard {
-  background: var(--michmesh-medium-gray);
+  background: var(--michmesh-bg-medium);
 }
 
 .resourceIcon {
@@ -419,12 +418,12 @@
 }
 
 .resourceCard strong {
-  color: var(--michmesh-dark-green);
+  color: var(--michmesh-lake);
   font-size: 1.1rem;
 }
 
 [data-theme='dark'] .resourceCard strong {
-  color: var(--michmesh-mint);
+  color: var(--michmesh-accent);
 }
 
 .resourceCard p {
