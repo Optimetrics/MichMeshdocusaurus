@@ -1,8 +1,8 @@
 /**
- * Homepage styles — Lake & Copper color scheme.
+ * Homepage — Lake & Copper color scheme.
  */
 
-/* ===== HERO BANNER ===== */
+/* ===== HERO ===== */
 .heroBanner {
   background: linear-gradient(135deg, var(--michmesh-lake-dark) 0%, var(--michmesh-lake) 60%, var(--michmesh-copper) 100%);
   position: relative;
@@ -50,36 +50,30 @@
   background: var(--michmesh-accent);
   color: #1a1a1a;
   font-weight: 800;
-  font-size: 0.9rem;
+  font-size: 0.85rem;
   letter-spacing: 0.15em;
   padding: 0.4rem 1.5rem;
   margin-bottom: 1.5rem;
-  font-family: sans-serif;
+  border-radius: 2px;
 }
 
 .heroTitle {
   color: #ffffff;
-  font-size: 3.2rem;
+  font-size: 2.8rem;
   font-weight: 800;
-  margin-bottom: 0.5rem;
-  line-height: 1.1;
+  margin-bottom: 1rem;
+  line-height: 1.15;
 }
 
 .heroTagline {
-  color: #ffffff;
-  font-size: 1.6rem;
-  font-weight: 600;
-  margin-bottom: 0.3rem;
-  opacity: 0.95;
-}
-
-.heroSubtag {
-  color: var(--michmesh-copper-light);
-  font-size: 1.1rem;
-  font-weight: 500;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.92);
+  font-size: 1.2rem;
+  font-weight: 400;
   margin-bottom: 2rem;
+  line-height: 1.6;
+  max-width: 640px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .heroButtons {
@@ -118,256 +112,178 @@
     padding: 3rem 1rem;
   }
   .heroTitle {
-    font-size: 2.2rem;
+    font-size: 2rem;
   }
   .heroTagline {
-    font-size: 1.2rem;
+    font-size: 1.05rem;
   }
 }
 
-/* ===== SECTION TITLES ===== */
+/* ===== SHARED ===== */
 .sectionTitle {
   color: var(--michmesh-lake);
   font-weight: 800;
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
 }
 
 [data-theme='dark'] .sectionTitle {
   color: var(--michmesh-accent);
 }
 
-/* ===== FREE OFF-GRID COMMUNICATION ===== */
-.freeOffGrid {
-  padding: 4rem 0;
-  background: var(--michmesh-bg-light);
-}
-
-.freeOffGrid .sectionTitle {
+.centered {
   text-align: center;
-  font-size: 2rem;
-  margin-bottom: 2.5rem;
 }
 
-.featureGrid {
+/* ===== THREE DOOR ===== */
+.threeDoor {
+  padding: 4rem 0;
+}
+
+.doorGrid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  grid-template-columns: repeat(3, 1fr);
   gap: 1.5rem;
   max-width: 960px;
   margin: 0 auto;
 }
 
-.featureItem {
-  display: flex;
-  align-items: flex-start;
-  gap: 1rem;
-  padding: 1rem 1.2rem;
+@media screen and (max-width: 768px) {
+  .doorGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.doorCard {
   background: #ffffff;
-  border-radius: 8px;
-  border-left: 4px solid var(--michmesh-lake);
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+  border-radius: 10px;
+  padding: 2rem 1.5rem;
+  border-top: 4px solid var(--michmesh-copper);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
 }
 
-[data-theme='dark'] .featureItem {
+[data-theme='dark'] .doorCard {
   background: var(--michmesh-bg-medium);
-  border-left-color: var(--michmesh-accent);
 }
 
-.featureIcon {
-  font-size: 1.5rem;
-  flex-shrink: 0;
-  margin-top: 0.1rem;
-}
-
-.featureText {
-  margin: 0;
-  font-size: 1rem;
-  line-height: 1.5;
-}
-
-/* ===== WHO WE ARE ===== */
-.whoWeAre {
-  padding: 4rem 0;
-}
-
-.whoWeAre .sectionTitle {
-  text-align: center;
-  font-size: 2rem;
-}
-
-.whoWeAreContent {
-  max-width: 750px;
-  margin: 0 auto;
-  text-align: center;
-}
-
-.leadText {
-  font-size: 1.2rem;
+.doorCardTitle {
   color: var(--michmesh-lake);
-  margin-bottom: 1.5rem;
-  line-height: 1.6;
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
 }
 
-[data-theme='dark'] .leadText {
+[data-theme='dark'] .doorCardTitle {
   color: var(--michmesh-accent);
 }
 
-.whoWeAreContent > p:last-child {
-  font-size: 1.05rem;
-  line-height: 1.7;
+.doorCardDesc {
+  line-height: 1.65;
+  flex: 1;
+  margin-bottom: 0.75rem;
 }
 
-/* ===== COMMUNITY BENEFITS ===== */
-.communityBenefits {
+.doorCardMeta {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--michmesh-copper);
+  margin-bottom: 1.25rem;
+}
+
+.doorCardBtn {
+  margin-top: auto;
+}
+
+.doorBtn {
+  width: 100%;
+  text-align: center;
+}
+
+/* ===== WHY MICHIGAN ===== */
+.whyMichigan {
   padding: 4rem 0;
   background: var(--michmesh-bg-light);
 }
 
-.communityBenefits .sectionTitle {
-  text-align: center;
-  font-size: 2rem;
-}
-
-.sectionSubtitle {
-  text-align: center;
-  max-width: 650px;
-  margin: 0 auto 2.5rem;
-  font-size: 1.05rem;
-  line-height: 1.6;
-}
-
-.benefitsGrid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 2rem;
-  max-width: 960px;
-  margin: 0 auto 2.5rem;
-}
-
-.benefitCard {
-  background: #ffffff;
-  border-radius: 10px;
-  padding: 2rem 1.5rem;
-  text-align: center;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-  border-top: 4px solid var(--michmesh-copper);
-}
-
-[data-theme='dark'] .benefitCard {
-  background: var(--michmesh-bg-medium);
-}
-
-.benefitIcon {
-  font-size: 2.5rem;
-  margin-bottom: 0.75rem;
-}
-
-.benefitTitle {
-  color: var(--michmesh-lake);
-  font-size: 1.2rem;
-  margin-bottom: 0.5rem;
-}
-
-[data-theme='dark'] .benefitTitle {
-  color: var(--michmesh-accent);
-}
-
-.benefitCard p {
-  margin: 0;
-  line-height: 1.6;
-}
-
-.noFeesBanner {
-  text-align: center;
-  background: var(--michmesh-lake);
-  color: #ffffff;
-  padding: 1.5rem 2rem;
-  border-radius: 8px;
-  max-width: 500px;
+.whyContent {
+  max-width: 720px;
   margin: 0 auto;
 }
 
-.noFeesBanner span {
-  font-size: 1.4rem;
-  font-weight: 800;
-  letter-spacing: 0.03em;
+.whyContent p {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  margin-bottom: 1.25rem;
 }
 
-.noFeesBanner small {
-  font-style: italic;
-  opacity: 0.85;
+.whyContent p:last-child {
+  margin-bottom: 0;
 }
 
-/* ===== HOST A NODE ===== */
-.hostANode {
+/* ===== HOW IT WORKS ===== */
+.howItWorks {
   padding: 4rem 0;
 }
 
-.hostGrid {
+.stepGrid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 3rem;
-  align-items: start;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  max-width: 900px;
+  margin: 0 auto 2rem;
 }
 
 @media screen and (max-width: 768px) {
-  .hostGrid {
+  .stepGrid {
     grid-template-columns: 1fr;
-    gap: 2rem;
+    gap: 1.5rem;
   }
 }
 
-.hostSubtitle {
-  font-size: 1.15rem;
-  font-weight: 700;
-  color: var(--michmesh-copper);
-  margin-bottom: 0.75rem;
-}
-
-.hostWhy p,
-.hostWhat p {
-  line-height: 1.7;
-}
-
-.hostList {
-  padding-left: 1.2rem;
-}
-
-.hostList li {
-  margin-bottom: 0.75rem;
-  line-height: 1.6;
-}
-
-.hostDisclaimer {
-  margin-top: 1rem;
-  opacity: 0.8;
-}
-
-/* ===== FUN & FREE ===== */
-.funAndFree {
-  padding: 4rem 0;
-  background: linear-gradient(135deg, var(--michmesh-lake-dark) 0%, var(--michmesh-lake) 100%);
-  color: #ffffff;
-}
-
-.funAndFree .sectionTitle {
+.stepCard {
   text-align: center;
-  color: #ffffff;
-  font-size: 2rem;
+  padding: 1.5rem 1rem;
 }
 
-.funContent {
-  max-width: 750px;
-  margin: 0 auto;
+.stepNumber {
+  font-size: 3.5rem;
+  font-weight: 800;
+  color: var(--michmesh-lake);
+  opacity: 0.2;
+  line-height: 1;
+  margin-bottom: 0.5rem;
 }
 
-.funText {
-  text-align: center;
-  font-size: 1.05rem;
-  line-height: 1.7;
-}
-
-.funText strong {
+[data-theme='dark'] .stepNumber {
   color: var(--michmesh-accent);
+}
+
+.stepTitle {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--michmesh-lake);
+  margin-bottom: 0.5rem;
+}
+
+[data-theme='dark'] .stepTitle {
+  color: var(--michmesh-accent);
+}
+
+.stepDesc {
+  font-size: 0.95rem;
+  line-height: 1.65;
+  margin: 0;
+}
+
+.stepCta {
+  text-align: center;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
 }
 
 /* ===== RESOURCES ===== */
@@ -376,15 +292,9 @@
   background: var(--michmesh-bg-light);
 }
 
-.resources .sectionTitle {
-  text-align: center;
-  font-size: 2rem;
-  margin-bottom: 2rem;
-}
-
 .resourceLinks {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 1.5rem;
   max-width: 960px;
   margin: 0 auto;
@@ -419,7 +329,9 @@
 
 .resourceCard strong {
   color: var(--michmesh-lake);
-  font-size: 1.1rem;
+  font-size: 1.05rem;
+  display: block;
+  margin-bottom: 0.25rem;
 }
 
 [data-theme='dark'] .resourceCard strong {
@@ -427,7 +339,31 @@
 }
 
 .resourceCard p {
-  margin: 0.25rem 0 0;
+  margin: 0;
   font-size: 0.9rem;
   opacity: 0.8;
+  line-height: 1.5;
+}
+
+/* ===== FINAL CTA BAND ===== */
+.ctaBand {
+  padding: 5rem 2rem;
+  background: linear-gradient(135deg, var(--michmesh-lake-dark) 0%, var(--michmesh-lake) 100%);
+  color: #ffffff;
+  text-align: center;
+}
+
+.ctaBandText {
+  font-size: 1.3rem;
+  font-weight: 600;
+  max-width: 600px;
+  margin: 0 auto 2rem;
+  line-height: 1.55;
+}
+
+.ctaBandButtons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
 }

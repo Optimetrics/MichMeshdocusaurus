@@ -5,6 +5,10 @@ import Heading from '@theme/Heading';
 import MeshAnimation from '@site/src/components/MeshAnimation';
 import styles from './index.module.css';
 
+const DISCORD_URL = 'https://discord.gg/skgWyPuft8';
+const SIGNAL_URL =
+  'https://signal.group/#CjQKIG5-o6UUXvto66c1wN4fbinuguy614cJtRPmMxUA6JWyEhBKp6Q70OkA2MpcjsBYU1r9';
+
 function HeroBanner() {
   return (
     <header className={styles.heroBanner}>
@@ -12,19 +16,29 @@ function HeroBanner() {
       <div className={styles.heroOverlay}>
         <div className="container">
           <div className={styles.heroContent}>
-            <div className={styles.heroMeshtasticBadge}>MESHTASTIC · MESHCORE · RETICULUM</div>
+            <div className={styles.heroMeshtasticBadge}>
+              MESHTASTIC · MESHCORE · RETICULUM
+            </div>
             <Heading as="h1" className={styles.heroTitle}>
-              Michigan Mesh Network
+              A volunteer-built radio network across Michigan.
             </Heading>
-            <p className={styles.heroTagline}>Connect Your Community</p>
-            <p className={styles.heroSubtag}>Free Off-Grid Mesh Network for Everyone</p>
+            <p className={styles.heroTagline}>
+              Works when the power's out, the cell tower's down, and you're
+              miles from the nearest road. No monthly fees. No license required.
+            </p>
             <div className={styles.heroButtons}>
-              <Link className={clsx('button button--lg', styles.btnPrimary)} to="/docs/intro">
+              <Link
+                className={clsx('button button--lg', styles.btnPrimary)}
+                to="/docs/intro">
                 Get Started
               </Link>
-              <Link className={clsx('button button--lg', styles.btnSecondary)} to="#host-a-node">
-                Host a Node
-              </Link>
+              <a
+                className={clsx('button button--lg', styles.btnSecondary)}
+                href={DISCORD_URL}
+                target="_blank"
+                rel="noopener noreferrer">
+                Join the Discord
+              </a>
             </div>
           </div>
         </div>
@@ -33,45 +47,58 @@ function HeroBanner() {
   );
 }
 
-function FreeOffGrid() {
-  const features = [
+function ThreeDoor() {
+  const doors = [
     {
-      icon: '📻',
-      text: 'Uses license-free radio frequencies approved by the FCC \u2014 no ham license or permits needed!',
+      title: 'I want to join the network',
+      description:
+        'For anyone who wants to send messages, track hikes, or have a radio that works when nothing else does.',
+      meta: 'Starts around $35.',
+      cta: 'Get Started',
+      to: '/docs/intro',
+      external: false,
     },
     {
-      icon: '💬',
-      text: 'Perfect for texting, weather alerts, GPS tracking, sensor monitoring & more',
+      title: 'I have a tall structure',
+      description:
+        'Barn, silo, rooftop, tower — property in the right spot can extend the network for miles. Free node, no internet needed, no data access.',
+      meta: null,
+      cta: 'Host a Node',
+      to: '/host-a-node',
+      external: false,
     },
     {
-      icon: '🏔️',
-      text: 'Works without cell towers, Wi-Fi, or internet \u2014 true off-grid communication',
-    },
-    {
-      icon: '🌐',
-      text: 'Open-source software built by a global community of volunteers',
-    },
-    {
-      icon: '📡',
-      text: 'Uses LoRa (Long Range) radio and mesh networking so messages hop from node to node across miles',
-    },
-    {
-      icon: '💰',
-      text: 'Completely free to use \u2014 the only cost is the hardware (~$35 per device)',
+      title: "I'm here to learn more",
+      description:
+        "Township officials, press, emergency managers, or curious neighbors — here\u2019s what this is, why it matters, and who runs it.",
+      meta: null,
+      cta: 'About MichMesh',
+      to: '/about',
+      external: false,
     },
   ];
 
   return (
-    <section className={styles.freeOffGrid}>
+    <section className={styles.threeDoor}>
       <div className="container">
-        <Heading as="h2" className={styles.sectionTitle}>
-          Free Off-Grid Communication
+        <Heading as="h2" className={clsx(styles.sectionTitle, styles.centered)}>
+          Where do you fit?
         </Heading>
-        <div className={styles.featureGrid}>
-          {features.map((f, i) => (
-            <div key={i} className={styles.featureItem}>
-              <span className={styles.featureIcon}>{f.icon}</span>
-              <p className={styles.featureText}>{f.text}</p>
+        <div className={styles.doorGrid}>
+          {doors.map((d) => (
+            <div key={d.title} className={styles.doorCard}>
+              <Heading as="h3" className={styles.doorCardTitle}>
+                {d.title}
+              </Heading>
+              <p className={styles.doorCardDesc}>{d.description}</p>
+              {d.meta && <p className={styles.doorCardMeta}>{d.meta}</p>}
+              <div className={styles.doorCardBtn}>
+                <Link
+                  className={clsx('button button--outline button--primary', styles.doorBtn)}
+                  to={d.to}>
+                  {d.cta}
+                </Link>
+              </div>
             </div>
           ))}
         </div>
@@ -80,26 +107,32 @@ function FreeOffGrid() {
   );
 }
 
-function WhoWeAre() {
+function WhyMichigan() {
   return (
-    <section className={styles.whoWeAre}>
+    <section className={styles.whyMichigan}>
       <div className="container">
         <Heading as="h2" className={styles.sectionTitle}>
-          Who We Are
+          Why Michigan needs this
         </Heading>
-        <div className={styles.whoWeAreContent}>
-          <p className={styles.leadText}>
-            <em>
-              We are your neighbors building a community mesh network across the
-              area &mdash; powered by volunteers and open-source technology.
-            </em>
+        <div className={styles.whyContent}>
+          <p>
+            Michigan has real communication gaps. Ice storms knock power out for
+            days at a time. Cell coverage disappears along the lakeshore, through
+            the national forests, and across most of the UP. When tornados hit or
+            the grid fails, the tools we rely on every day stop working.
           </p>
           <p>
-            Michigan Mesh connects homes, farms, and businesses using small,
-            low-power radio nodes. We are looking for community members with
-            tall structures &mdash; barns, silos, rooftops &mdash; who would
-            like to help extend the network by hosting a small, unobtrusive
-            node. There is no cost or obligation to you!
+            MichMesh is a volunteer-run radio network that keeps working anyway.
+            Small low-power nodes relay messages from device to device — no cell
+            towers, no internet, no power grid. A node on a barn in Allegan
+            County can move a message to a hiker in the Manistee National Forest.
+            A relay on a silo outside Coopersville can reach a family in Muskegon
+            during a storm.
+          </p>
+          <p>
+            We're neighbors building this for our neighbors. It's free to use,
+            open-source, and runs on FCC-approved license-free frequencies —
+            anyone can join.
           </p>
         </div>
       </div>
@@ -107,176 +140,120 @@ function WhoWeAre() {
   );
 }
 
-function CommunityBenefits() {
-  const benefits = [
+function HowItWorks() {
+  const steps = [
     {
-      icon: '⚡',
-      title: 'Emergency Communications',
-      description:
-        'Send and receive text messages during storms, power outages, or other emergencies when cell service fails',
+      n: '1',
+      title: 'Get a radio',
+      desc: 'Small LoRa device, starts around $35. Works with your phone over Bluetooth.',
     },
     {
-      icon: '⚙️',
-      title: 'Automation & Monitoring',
-      description:
-        'Monitor equipment, receive intrusion alerts, and automate tasks on your property',
+      n: '2',
+      title: 'Join the mesh',
+      desc: "Flash firmware, open the app, you\u2019re on the network. No account, no SIM, no subscription.",
     },
     {
-      icon: '🌦️',
-      title: 'Weather Monitoring',
-      description:
-        'Share real-time local weather data from connected sensors across the network',
+      n: '3',
+      title: 'Send messages anywhere nodes reach',
+      desc: 'Text, GPS, group channels. Every radio is also a relay that helps the network grow.',
     },
   ];
 
   return (
-    <section className={styles.communityBenefits}>
+    <section className={styles.howItWorks}>
       <div className="container">
-        <Heading as="h2" className={styles.sectionTitle}>
-          Community Benefits
+        <Heading as="h2" className={clsx(styles.sectionTitle, styles.centered)}>
+          How it works
         </Heading>
-        <p className={styles.sectionSubtitle}>
-          A mesh network gives your community powerful tools that work even when
-          the power goes out or cell towers go down.
-        </p>
-        <div className={styles.benefitsGrid}>
-          {benefits.map((b, i) => (
-            <div key={i} className={styles.benefitCard}>
-              <div className={styles.benefitIcon}>{b.icon}</div>
-              <Heading as="h3" className={styles.benefitTitle}>
-                {b.title}
-              </Heading>
-              <p>{b.description}</p>
+        <div className={styles.stepGrid}>
+          {steps.map((s) => (
+            <div key={s.n} className={styles.stepCard}>
+              <div className={styles.stepNumber}>{s.n}</div>
+              <h3 className={styles.stepTitle}>{s.title}</h3>
+              <p className={styles.stepDesc}>{s.desc}</p>
             </div>
           ))}
         </div>
-        <div className={styles.noFeesBanner}>
-          <span>No Monthly Fees. Ever.</span>
-          <br />
-          <small>All powered by your community</small>
-        </div>
+        <p className={styles.stepCta}>
+          Want the full walkthrough?{' '}
+          <Link className="button button--primary" to="/docs/intro">
+            Get Started
+          </Link>
+        </p>
       </div>
     </section>
   );
 }
 
-function HostANode() {
-  return (
-    <section id="host-a-node" className={styles.hostANode}>
-      <div className="container">
-        <div className={styles.hostGrid}>
-          <div className={styles.hostWhy}>
-            <Heading as="h2" className={styles.sectionTitle}>
-              Why Host a Node on Your Property?
-            </Heading>
-            <p className={styles.hostSubtitle}>Small Device. Big Impact.</p>
-            <p>
-              A single node on a tall structure can extend the mesh network for
-              miles in every direction, connecting dozens of families to free,
-              reliable communication.
-            </p>
-          </div>
-          <div className={styles.hostWhat}>
-            <Heading as="h2" className={styles.sectionTitle}>
-              What Does Hosting Involve?
-            </Heading>
-            <p className={styles.hostSubtitle}>Hosting is Easy & Free:</p>
-            <ul className={styles.hostList}>
-              <li>
-                We may provide and install a node at no cost to you* &mdash; a
-                small solar-powered device about the size of a solar garden
-                light
-              </li>
-              <li>
-                The node simply relays messages &mdash; it does not access,
-                store, or monitor any of your data
-              </li>
-              <li>
-                No internet connection or power outlet needed &mdash; nodes run
-                on solar with battery backup
-              </li>
-            </ul>
-            <p className={styles.hostDisclaimer}>
-              <small>*Free node provided for locations in strategic areas that help extend network coverage.</small>
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-  );
-}
+{/* TODO: Coverage map section goes here. Will show active nodes across Michigan with caption and link to full map page. */}
 
-function FunAndFree() {
-  return (
-    <section className={styles.funAndFree}>
-      <div className="container">
-        <Heading as="h2" className={styles.sectionTitle}>
-          It's Fun & It's Free!
-        </Heading>
-        <div className={styles.funContent}>
-          <div className={styles.funText}>
-            <p>
-              Send messages to friends and family miles away &mdash; no cell
-              plan needed. Track hikes and outdoor adventures with built-in GPS
-              sharing. Experiment with sensors, home automation, and DIY
-              electronics. Join a nationwide community of Meshtastic
-              enthusiasts.
-            </p>
-            <p>
-              The only cost is the hardware itself &mdash; devices start at
-              around <strong>$35</strong>. The network, the software, and the
-              community are all completely free.
-            </p>
-            <p>
-              Best of all, Meshtastic operates on FCC-approved, license-free
-              frequencies. Anyone can use it &mdash; no amateur radio license,
-              no permits, no paperwork. Just turn on your node and start
-              connecting!
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-  );
-}
-
-function Resources() {
+function CommunityResources() {
   return (
     <section className={styles.resources}>
       <div className="container">
-        <Heading as="h2" className={styles.sectionTitle}>
-          Mesh Network Resources
+        <Heading as="h2" className={clsx(styles.sectionTitle, styles.centered)}>
+          Community &amp; Resources
         </Heading>
         <div className={styles.resourceLinks}>
           <a
-            href="https://meshtastic.org"
+            href={DISCORD_URL}
             target="_blank"
             rel="noopener noreferrer"
             className={styles.resourceCard}>
-            <span className={styles.resourceIcon}>🌐</span>
+            <span className={styles.resourceIcon}>💬</span>
             <div>
-              <strong>meshtastic.org</strong>
-              <p>Official Meshtastic project &mdash; firmware, apps, and documentation</p>
+              <strong>Join the Discord</strong>
+              <p>
+                Active community, setup help, group buys, meetup announcements.
+              </p>
             </div>
           </a>
           <Link to="/docs/intro" className={styles.resourceCard}>
             <span className={styles.resourceIcon}>📖</span>
             <div>
               <strong>MichMesh Docs</strong>
-              <p>Local guides, setup help, and Michigan-specific information</p>
+              <p>
+                Protocol guides, node builds, line-of-sight tools,
+                Michigan-specific help.
+              </p>
             </div>
           </Link>
           <a
-            href="https://discord.gg/skgWyPuft8"
+            href={SIGNAL_URL}
             target="_blank"
             rel="noopener noreferrer"
             className={styles.resourceCard}>
-            <span className={styles.resourceIcon}>💬</span>
+            <span className={styles.resourceIcon}>🔒</span>
             <div>
-              <strong>Join our Discord</strong>
-              <p>Connect with the MichMesh community</p>
+              <strong>Signal group</strong>
+              <p>For folks who prefer Signal over Discord.</p>
             </div>
           </a>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function CtaBand() {
+  return (
+    <section className={styles.ctaBand}>
+      <div className="container">
+        <p className={styles.ctaBandText}>
+          Michigan runs on small towns, big lakes, and neighbors who show up.
+          MichMesh is built the same way.
+        </p>
+        <div className={styles.ctaBandButtons}>
+          <Link
+            className={clsx('button button--lg', styles.btnPrimary)}
+            to="/docs/intro">
+            Get Started
+          </Link>
+          <Link
+            className={clsx('button button--lg', styles.btnSecondary)}
+            to="/host-a-node">
+            Host a Node
+          </Link>
         </div>
       </div>
     </section>
@@ -287,15 +264,14 @@ export default function Home() {
   return (
     <Layout
       title="Michigan Mesh Network"
-      description="Free off-grid mesh network for everyone. Michigan Mesh connects communities using Meshtastic LoRa radio nodes.">
+      description="A volunteer-built radio network across Michigan. Works without cell towers, internet, or power grid. Free to use, no license required.">
       <HeroBanner />
       <main>
-        <FreeOffGrid />
-        <WhoWeAre />
-        <CommunityBenefits />
-        <HostANode />
-        <FunAndFree />
-        <Resources />
+        <ThreeDoor />
+        <WhyMichigan />
+        <HowItWorks />
+        <CommunityResources />
+        <CtaBand />
       </main>
     </Layout>
   );
