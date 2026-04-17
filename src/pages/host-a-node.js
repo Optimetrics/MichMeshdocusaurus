@@ -202,7 +202,7 @@ function ForOrganizations() {
             <h3 className={styles.listTitle}>What we handle</h3>
             <ul className={styles.cleanList}>
               <li>All hardware, installation, and permits if required</li>
-              <li>General liability coverage during installation</li>
+              <li>Careful, low-impact installation on existing structures</li>
               <li>Annual inspection and long-term maintenance</li>
               <li>A point of contact for any questions from staff or the public</li>
             </ul>
@@ -347,7 +347,7 @@ function CommonQuestions() {
     },
     {
       q: "Who's liable if something happens?",
-      a: 'We carry general liability coverage during installation. Once installed, the node is passive hardware — no moving parts, no heat, no emissions.',
+      a: 'MichMesh is a volunteer collective and does not carry liability insurance. That said, a node is passive hardware — no moving parts, no heat, no emissions — and is installed carefully on existing structures. For organizational hosts, we recommend a simple hosting agreement that spells out expectations on both sides; we provide a template.',
     },
     {
       q: "Who actually runs MichMesh?",
