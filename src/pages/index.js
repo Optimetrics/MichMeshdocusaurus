@@ -29,7 +29,7 @@ function HeroBanner() {
             <div className={styles.heroButtons}>
               <Link
                 className={clsx('button button--lg', styles.btnPrimary)}
-                to="/docs/intro">
+                to="/docs/getting-started">
                 Get Started
               </Link>
               <a
@@ -55,7 +55,7 @@ function ThreeDoor() {
         'For anyone who wants to send messages, track hikes, or have a radio that works when nothing else does.',
       meta: 'Starts around $35.',
       cta: 'Get Started',
-      to: '/docs/intro',
+      to: '/docs/getting-started',
       external: false,
     },
     {
@@ -176,7 +176,7 @@ function HowItWorks() {
         </div>
         <p className={styles.stepCta}>
           Want the full walkthrough?{' '}
-          <Link className="button button--primary" to="/docs/intro">
+          <Link className="button button--primary" to="/docs/getting-started">
             Get Started
           </Link>
         </p>
@@ -246,7 +246,7 @@ function CtaBand() {
         <div className={styles.ctaBandButtons}>
           <Link
             className={clsx('button button--lg', styles.btnPrimary)}
-            to="/docs/intro">
+            to="/docs/getting-started">
             Get Started
           </Link>
           <Link
